@@ -1,0 +1,27 @@
+.footer {
+  padding: 50px 4vw;
+  text-align: center;
+
+  &__text01 {
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    @include mediaQuery("sm") {
+      margin-bottom: 30px;
+    }
+  }
+  &__text02 {
+    margin-bottom: 30px;
+
+    @include mediaQuery("sm") {
+      margin-bottom: 60px;
+    }
+
+    span:first-child {
+      margin-right: 15px;
+    }
+  }
+  &__copyRight {
+    font-size: 14px;
+  }
+}

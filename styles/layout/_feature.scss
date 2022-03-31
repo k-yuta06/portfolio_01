@@ -1,0 +1,74 @@
+//feature
+.feature {
+  text-align: center;
+  padding: 80px 4vw;
+
+  @include mediaQuery("sm") {
+    text-align: start;
+  }
+  &__inner {
+    @extend .content-width;
+  }
+  .section-title {
+    margin-bottom: 45px;
+
+    @include mediaQuery("sm") {
+      margin-bottom: 65px;
+    }
+
+    &::after {
+      content: "FEATURE";
+      display: block;
+    }
+  }
+  &__info {
+    @extend .flex;
+
+    @include mediaQuery("sm") {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 100px;
+    }
+    &.info-left {
+      @include mediaQuery("sm") {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+  &__img {
+    width: 70%;
+    margin: 0 auto 30px;
+
+    @include mediaQuery("sm") {
+      width: 37%;
+      margin: 0 15px 0 0;
+    }
+    &.img-right {
+      @include mediaQuery("sm") {
+        margin: 0;
+      }
+    }
+  }
+  &__text {
+    margin-bottom: 70px;
+
+    @include mediaQuery("sm") {
+      margin-bottom: 0;
+    }
+    br {
+      display: none;
+
+      @include mediaQuery("sm") {
+        display: block;
+      }
+    }
+  }
+  &__mainText {
+    @extend .font-md;
+    margin-bottom: 30px;
+  }
+  &__subText {
+    @extend .font-sm;
+  }
+}

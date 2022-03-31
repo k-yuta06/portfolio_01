@@ -1,0 +1,39 @@
+//冒頭に使うサイズを明記するとわかりやすい
+$sizes: xl, lg, md, sm, xs;
+
+//ブレイクポイント
+$breakpoint: (
+  "xs": "screen and (min-width: 375px)",
+  "sm": "screen and (min-width: 600px)",
+  "md": "screen and (min-width: 960px)",
+  "lg": "screen and (min-width: 1280px)",
+  "xl": "screen and (min-width: 1980px)",
+) !default;
+
+//mixinを定義（初期値はmd）
+@mixin mediaQuery($size: md) {
+  @media #{ map-get( $breakpoint, $size ) } {
+    @content;
+  }
+}
+
+//アニメーション
+@mixin animation(
+  $name,
+  $duration: 1s,
+  $timing-function: ease,
+  $delay: 0s,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode: forwards
+) {
+  animation: {
+    name: $name;
+    duration: $duration;
+    timing-function: $timing-function;
+    delay: $delay;
+    iteration-count: $iteration-count;
+    direction: $direction;
+    fill-mode: $fill-mode;
+  }
+}

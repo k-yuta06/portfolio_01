@@ -1,0 +1,54 @@
+// btn
+.btn-shadow {
+  transition: all 0.3s;
+  &:hover {
+    transform: translateY(-2.5px);
+    box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+// hamburger-btn
+.hamburger-btn {
+  position: relative;
+  z-index: 100;
+  border: none;
+  cursor: pointer;
+
+  & > span {
+    display: block;
+    width: 35px;
+    height: 2px;
+    background-color: $cBlack;
+    margin-bottom: 9px;
+    transition: transform 0.7s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.menu-open {
+  &.hamburger-btn {
+    & > span {
+      &:nth-child(1) {
+        transition-delay: 70ms;
+        transform: translateY(11px) rotate(135deg);
+      }
+      &:nth-child(2) {
+        transform: translateX(-18px) scale(0);
+      }
+      &:nth-child(3) {
+        transition-delay: 140ms;
+        transform: translateY(-11px) rotate(-135deg);
+      }
+    }
+  }
+}
+
+//contact-btn
+.contact-btn {
+  padding: 12px 35px;
+  color: $cWhite;
+  border-radius: 10px;
+  background: linear-gradient(to right, #fa41cc, #6020b0);
+}

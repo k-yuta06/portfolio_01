@@ -1,0 +1,44 @@
+.price {
+  padding: 100px 4vw;
+  background-color: $cBgSkyblue;
+
+  &__inner {
+    @extend .content-width;
+  }
+  .section-title::after {
+    content: "PRICE";
+    display: block;
+  }
+  &__table {
+    border: 1px solid $cBorder;
+    width: 100%;
+    background-color: $cWhite;
+    border-collapse: collapse;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.16);
+    margin-bottom: 40px;
+    table-layout: fixed;
+  }
+  &__info {
+    border-bottom: 1px solid $cBorder;
+  }
+  &__item,
+  &__cost {
+    padding: 20px 10px;
+
+    @include mediaQuery("sm") {
+      padding: 30px 15px;
+    }
+  }
+  &__item {
+    border-right: 1px solid $cBorder;
+
+    br {
+      @include mediaQuery("sm") {
+        display: none;
+      }
+    }
+  }
+  &__attention {
+    text-align: center;
+  }
+}

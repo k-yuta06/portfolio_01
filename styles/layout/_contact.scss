@@ -1,0 +1,79 @@
+.contact {
+  padding: 100px 4vw;
+  background: linear-gradient(to right, #05a5fa, #63fbd7);
+  &__inner {
+    @extend .content-width;
+  }
+  .section-title {
+    color: $cWhite;
+    margin-bottom: 40px;
+
+    &::after {
+      content: "CONTACT";
+      color: $cWhite;
+    }
+  }
+  &__intro {
+    color: $cWhite;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__form {
+    padding: 45px 4vw;
+    background-color: $cWhite;
+
+    @include mediaQuery("sm") {
+      padding: 45px 60px;
+    }
+  }
+  &__item {
+    margin-bottom: 30px;
+
+    &__label {
+      display: inline-block;
+      margin-bottom: 20px;
+
+      &::after {
+        content: "必須";
+        margin-left: 20px;
+        padding: 3px 10px;
+        color: $cWhite;
+        background-color: $cBgLabel;
+        border-radius: 5px;
+      }
+    }
+    &__input,
+    &__textarea {
+      display: block;
+      background-color: $cBgSkyblue;
+      width: 100%;
+      padding: 10px;
+    }
+    &__input {
+      max-width: 500px;
+    }
+  }
+  &__privacyCheck {
+    text-align: center;
+    margin-bottom: 30px;
+
+    &__label {
+      vertical-align: 3px;
+    }
+    &__input {
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      border: 1px solid $cBlack;
+    }
+  }
+  &__submitBtn {
+    text-align: center;
+    &__input {
+      display: inline-block;
+      width: 155px;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}

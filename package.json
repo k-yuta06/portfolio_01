@@ -1,0 +1,12 @@
+{
+  "name": "portfolio_02",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:css": "sass styles/style.scss:styles/css/style.css"
+  },
+  "dependencies": {
+    "sass": "^1.49.10"
+  }
+}

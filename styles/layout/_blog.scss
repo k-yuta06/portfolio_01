@@ -1,0 +1,43 @@
+.blog {
+  padding: 100px 4vw;
+  background-color: $cBgSkyblue;
+
+  .section-title::after {
+    content: "BLOG";
+  }
+  &__list {
+    @extend .flex;
+
+    @include mediaQuery("sm") {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__item {
+    @extend .flex;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+    margin-bottom: 50px;
+
+    @include mediaQuery("sm") {
+      width: calc((100% - 40px) / 3);
+      margin: 0;
+    }
+
+    &__body {
+      @extend .flex;
+      padding: 20px 30px;
+      flex-grow: 1;
+      background-color: $cWhite;
+    }
+    &__info {
+      flex-grow: 1;
+    }
+    &__date {
+      display: block;
+      text-align: right;
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.faq {
+  padding: 100px 4vw;
+
+  &__inner {
+    @extend .content-width;
+  }
+  .section-title::after {
+    content: "FAQ";
+    display: block;
+  }
+  &__list {
+    width: 100%;
+    border: 1px solid $cBorder;
+  }
+  &__bar {
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid $cBorder;
+
+    @include mediaQuery("sm") {
+      padding: 30px 15px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__detail {
+    height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    background-color: $cBgGray;
+    transition: all 0.3s;
+
+    @include mediaQuery("sm") {
+      padding: 0 15px;
+    }
+  }
+  &__input:checked + &__detail {
+    height: min-content;
+    padding: 20px 10px;
+    border-bottom: 1px solid $cBorder;
+
+    @include mediaQuery("sm") {
+      padding: 30px 15px;
+    }
+  }
+  &__input {
+    display: none;
+  }
+}

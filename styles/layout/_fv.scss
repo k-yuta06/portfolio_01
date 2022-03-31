@@ -1,0 +1,63 @@
+.fv {
+  position: relative;
+  margin-top: 94px;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+
+  @include mediaQuery("sm") {
+    text-align: left;
+  }
+
+  &-inner {
+    @extend .content-width;
+    padding: 0 4vw;
+    position: relative;
+  }
+  &__text {
+    position: relative;
+    margin-top: 85px;
+    z-index: 80;
+
+    @include mediaQuery("sm") {
+      position: absolute;
+      margin-top: 165px;
+    }
+  }
+  &__mainText {
+    @extend .font-lg;
+    margin-bottom: 40px;
+  }
+  &__subText {
+    margin-bottom: 40px;
+  }
+  &__btn {
+    position: relative;
+    z-index: 70;
+    margin-bottom: 80px;
+  }
+  &__circleImg {
+    display: none;
+    position: absolute;
+    top: -125px;
+    right: -300px;
+    width: 710px;
+    z-index: 50;
+
+    @include mediaQuery("sm") {
+      display: block;
+    }
+  }
+  &__personImg {
+    width: 300px;
+    margin: 0 auto;
+
+    @include mediaQuery("sm") {
+      position: absolute;
+      top: 135px;
+      right: 0;
+      z-index: 60;
+      width: 430px;
+    }
+  }
+}

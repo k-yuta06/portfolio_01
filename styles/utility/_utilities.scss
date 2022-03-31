@@ -1,0 +1,97 @@
+// * {
+//     border: 2px solid red;
+// }
+body {
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  font-family: "Noto Serif JP", serif;
+  font-weight: bold;
+  color: $cMainFont;
+  overflow-x: hidden;
+}
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+  overflow-x: hidden;
+}
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+a {
+  display: inline-block;
+  cursor: pointer;
+}
+.font-sm {
+  font-size: 14px;
+}
+.font-md {
+  font-size: 16px;
+}
+.font-lr {
+  font-size: 20px;
+}
+.font-lg {
+  font-size: 24px;
+}
+@include mediaQuery("md") {
+  .font-sm {
+    font-size: 16px;
+  }
+  .font-md {
+    font-size: 24px;
+  }
+  .font-lr {
+    font-size: 28px;
+  }
+  .font-lg {
+    font-size: 32px;
+  }
+}
+.mb-sm {
+  margin-bottom: 16px;
+}
+.mb-lg {
+  margin-bottom: 80px;
+}
+.section-title {
+  @extend .font-lg;
+  text-align: center;
+  color: $cMainTitle;
+  margin-bottom: 50px;
+
+  &::after {
+    font-size: 16px;
+    display: block;
+    color: $cSectionTitle;
+  }
+  @include mediaQuery("sm") {
+    margin-bottom: 70px;
+  }
+}
+.section-subTitle {
+  @extend .font-lr;
+  color: $cSubTitle;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+.content-width {
+  max-width: $contentMaxWidth;
+  margin: 0 auto;
+}
+.trigger {
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  &.inview {
+    opacity: 1;
+  }
+}
