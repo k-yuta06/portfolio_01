@@ -1,7 +1,2 @@
 # Dependency directory
 node_modules
-
-# images
-*.jpg
-*.jpeg
-*.png
