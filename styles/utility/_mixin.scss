@@ -1,7 +1,5 @@
-//冒頭に使うサイズを明記するとわかりやすい
 $sizes: xl, lg, md, sm, xs;
 
-//ブレイクポイント
 $breakpoint: (
   "xs": "screen and (min-width: 375px)",
   "sm": "screen and (min-width: 600px)",
@@ -10,7 +8,6 @@ $breakpoint: (
   "xl": "screen and (min-width: 1980px)",
 ) !default;
 
-//mixinを定義（初期値はmd）
 @mixin mediaQuery($size: md) {
   @media #{ map-get( $breakpoint, $size ) } {
     @content;
