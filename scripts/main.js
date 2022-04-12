@@ -13,11 +13,21 @@ class Main {
         this.el.smoothScrollElements = document.querySelectorAll('a[href^="#"]');
         this.el.targetElements = document.querySelectorAll('.trigger');
         this.slider = new CardSlider('.swiper');
+        this.eventType = this.getEventType();
         this.init();
     }
     init() {
         this.addEvent();
         this.scrollObserver();
+    }
+    getEventType() {
+        const isTouchCapable = 
+            "ontouchstart" in window ||
+            (window.DocumentTouch && document instanceof window.DocumentTouch)
+            navigator.maxTouchPoints > 0 ||
+            window.navigator.msMaxTouchPoints > 0;
+
+        return isTouchCapable ? 'touchstart' : 'click';
     }
     toggleMobileMenu() {
         this.el.hamburgerBtn.classList.toggle('menu-open');
@@ -77,14 +87,14 @@ class Main {
         this.el.targetElements.forEach( element => observer.observe(element));
     }
     addEvent() {
-        this.el.hamburgerBtn.addEventListener('click', this.toggleMobileMenu.bind(this));
+        this.el.hamburgerBtn.addEventListener(this.eventType, this.toggleMobileMenu.bind(this));
         window.addEventListener('resize', this.resizeMobileMenu.bind(this));
 
         for(let i = 0; i < this.el.mobileMenuItem.length; i++) {
-            this.el.mobileMenuItem[i].addEventListener('click', this.closeMobileMenu.bind(this));
+            this.el.mobileMenuItem[i].addEventListener(this.eventType, this.closeMobileMenu.bind(this));
         }
         for(let i = 0; i < this.el.smoothScrollElements.length; i++) {
-            this.el.smoothScrollElements[i].addEventListener('click', this.smoothScroll);
+            this.el.smoothScrollElements[i].addEventListener(this.eventType, this.smoothScroll);
         }
     }
 }
