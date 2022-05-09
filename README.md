@@ -1,8 +1,3 @@
-# 概要
-こちらはLPのデザインカンプからコーディングしたものです。
-
-# 使用言語
-・HTML  
-・Sass  
-・JavaScript  
-
+  
+Here is the coding from the comprehensive layout. I built with HTML, Sass and JavaScript.
+  
