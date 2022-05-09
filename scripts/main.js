@@ -38,7 +38,7 @@ class Main {
         this.el.mobileMenu.classList.remove('menu-open');
     }
     resizeMobileMenu() {
-        if(window.innerWidth > 960) {
+        if(window.innerWidth >= 960) {
             this.closeMobileMenu();
         }
     }
